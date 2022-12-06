@@ -14,16 +14,20 @@ public class Game {
         StringBuilder sb = new StringBuilder();
         for (int i = -radius; i <= radius; i++) {
             if (i == 0) continue;
-            for (int j = -radius - 1; j <= radius + 1; j++) {
-                if (j == 0) continue;
-                if (i * i + j * j < (radius + 0.5) * (radius + 0.5) && i * i + j * j > (radius - 0.5) * (radius - 0.5)) {
-                    sb.append("-");
-                } else {
-                    sb.append(" ");
-                }
-            }
+            printCircleRow(i, sb);
             sb.append("\n");
         }
         System.out.println(sb);
+    }
+
+    private void printCircleRow(int row, StringBuilder sb) {
+        for (int j = -radius - 1; j <= radius + 1; j++) {
+            if (j == 0) continue;
+            if (row * row + j * j < (radius + 0.5) * (radius + 0.5) && row * row + j * j > (radius - 0.5) * (radius - 0.5)) {
+                sb.append("-");
+            } else {
+                sb.append(" ");
+            }
+        }
     }
 }
