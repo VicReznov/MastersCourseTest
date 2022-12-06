@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class UserInput {
 
-    private static Scanner scanner;
+    private static Scanner scanner= new Scanner(System.in);
 
     public UserInput() {
-        scanner = new Scanner(System.in);
     }
 
     public static int readCircleSize() {
