@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class TestController {
 
     public void start() {
@@ -7,6 +9,10 @@ public class TestController {
         int circleSize = UserInput.readCircleSize();
         Game game = new Game(circleSize);
         game.printCircle();
+
+        List<Integer> arr = UserInput.readDate();
+        SolarGame solarGame = new SolarGame(arr.get(0), arr.get(1));
+        solarGame.printSpace();
     }
 
 }
